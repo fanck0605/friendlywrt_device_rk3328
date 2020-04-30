@@ -7,8 +7,6 @@ function setup_openwrt()
 # dist
     mkdir -p ./run  # for overlayfs ramdisk
 
-    sed -i 's/REJECT/ACCEPT/g' ./etc/config/firewall
-
     [ -f ./etc/config/luci_statistics ] && sed -i '/collectd_thermal/{n;s/0/1/;}' ./etc/config/luci_statistics
     [ -f ./etc/config/luci_statistics ] && sed -i '/collectd_uptime/{n;s/0/1/;}' ./etc/config/luci_statistics
 
